@@ -1,29 +1,55 @@
-// Opacity Animation
+// Expertise Table Animation
 document.addEventListener("DOMContentLoaded", function() {
-    const header = document.getElementById("content");
-    let opacity = 0;
-    let top = -50;
+    const expertiseTable = document.querySelector('.expertise_tb');
+    
+    // Add initial hidden state
+    expertiseTable.classList.add('hidden-left');
+    
+    const animateExpertiseTable = () => {
+        let start = null;
+        const duration = 1000; // 1 second
 
-    const animateContent = () => {
-        if (opacity < 1) {
-            opacity += 0.01;
-            top += 1;
-            header.style.opacity = opacity;
-            header.style.top = top + "px";
-            requestAnimationFrame(animateContent);
-        }
+        const step = (timestamp) => {
+            if (!start) start = timestamp;
+            const progress = timestamp - start;
+            const percentage = Math.min(progress / duration, 1);
+            
+            expertiseTable.style.transform = `translateX(${-100 + (100 * percentage)}%)`;
+            expertiseTable.style.opacity = percentage;
+            
+            if (percentage < 1) {
+                requestAnimationFrame(step);
+            } else {
+                expertiseTable.classList.remove('hidden-left');
+                expertiseTable.classList.add('slide-in-left');
+            }
+        };
+
+        requestAnimationFrame(step);
     };
 
-    animateContent();
+    // Trigger animation when table is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateExpertiseTable();
+                observer.unobserve(expertiseTable);
+            }
+        });
+    }, { 
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px' // Trigger when 100px from bottom of viewport
+    });
+
+    observer.observe(expertiseTable);
 });
 
-
-// Slide in animation
+// Header Slide in animation
 document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
-    header.style.position = 'relative'; // Ensure the header is positioned relative
-    header.style.opacity = 0; // Start with opacity 0
-    header.style.top = '-50px'; // Start above the viewport
+    header.style.position = 'relative';
+    header.style.opacity = 0;
+    header.style.top = '-50px';
 
     const animateHeader = () => {
         let opacity = 0;
@@ -31,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const interval = setInterval(() => {
             if (opacity < 1) {
-                opacity += 0.05; // Increase opacity
-                top += 2; // Move down
+                opacity += 0.05;
+                top += 2;
                 header.style.opacity = opacity;
                 header.style.top = top + "px";
             } else {
-                clearInterval(interval); // Stop the animation
+                clearInterval(interval);
             }
-        }, 20); // Adjust the speed of the animation
+        }, 20);
     };
 
     animateHeader();

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/profile.png">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -27,9 +28,60 @@
 	</header>
     
     <!-- Content -->
-    <section id="content">
-        <h1>We are Trailblazing Technology</h1>
-    </section>
+    <div>
+        <div>
+            <h1 class="h1_title">Who we are</h1>
+        </div>
+        <div>
+            <section class="card_content">
+                <h3>We are Trailblazing Technology</h1>
+            </section>
+        </div>
+    </div>
+
+    <div>
+        <h1 class="h1_title">Our Expertise</h1>
+        <table class="expertise_tb">
+            <!-- Embedded Programming -->
+            <tr>
+                <td>
+                    <div class="expertise_desc1">
+                        <h1>Embedded Programming</h1>
+                        <p style="color: black; font-size: x-large;">
+                            As commercial MCUs are varied, we continuously comprehend our
+                            skills and experiences in handling various chip vendors.
+                            Among the notable brands, we have done multiple projects utilizing STM32, 
+                            Arduino, ESP32, Microchip, Renesas, Raspberry Pi, and many more.
+                            We also have a strong background in developing and implementing various 
+                            communication protocols such as UART, SPI, I2C, and CAN.
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <img class="expertise_img1" src="images/Expertise_1.png">
+                </td>
+            </tr>
+            <!-- Internet of Things -->
+            <tr>
+                <td>
+                    <img class="expertise_img2" src="images/Expertise_2.png">
+                </td>
+                <td>
+                    <div class="expertise_desc2">
+                        <h1>Internet of Things</h1>
+                        <p style="color: black; font-size: x-large;">
+                            A system with efficient and versatile workflows are highly concerned.
+                            We have numerous IoT projects ranging from home appliances to industrial devices.
+                            In IoT, there's a need for a robust and reliable communication system.
+                            There are several wireless technology have interfaced, such as the common Wi-Fi, Bluetooth/BLE, 
+                            OpenThread, LoRa, and GSM. Each type has different functions that depend on your project
+                        </p>
+                        
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
     <!-- / Content -->
 
     <footer>
@@ -48,7 +100,7 @@
         </div>
         
     </footer>
-    <script src="js/main.js"></script>
+    <script src="js/main.js" defer></script>
     
 </body>
 </html>
