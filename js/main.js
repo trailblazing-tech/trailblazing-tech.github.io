@@ -1,3 +1,65 @@
+// World Map Markers Animation
+document.addEventListener("DOMContentLoaded", function() {
+    const markers = document.querySelectorAll('.marker');
+    const popup = document.createElement('div');
+    popup.className = 'country-popup';
+    document.body.appendChild(popup);
+
+    // Country data
+    const countryData = {
+        'austria-marker': 'Austria',
+        'italy-marker': 'Italy',
+        'new-zealand-marker': 'New Zealand',
+        'germany-marker': 'Germany',
+        'indonesia-marker': 'Indonesia',
+        'sweden-marker': 'Sweden',
+        'uk-marker': 'United Kingdom',
+        'us-marker': 'United States',
+        'qatar-marker': 'Qatar',
+        'spain-marker': 'Spain'
+    };
+
+
+    markers.forEach(marker => {
+        // Add hover effect
+        marker.addEventListener('mouseenter', (e) => {
+            const rect = marker.getBoundingClientRect();
+            popup.textContent = countryData[marker.id];
+            popup.style.left = `${rect.left + window.scrollX}px`;
+            popup.style.top = `${rect.top + window.scrollY - 30}px`;
+            popup.style.opacity = '1';
+            marker.classList.add('active');
+        });
+
+        marker.addEventListener('mouseleave', () => {
+            popup.style.opacity = '0';
+            marker.classList.remove('active');
+        });
+
+        // Add click animation
+        marker.addEventListener('click', () => {
+            marker.classList.toggle('active');
+            if (marker.classList.contains('active')) {
+                popup.textContent = `Selected: ${countryData[marker.id]}`;
+                popup.style.opacity = '1';
+            } else {
+                popup.style.opacity = '0';
+            }
+        });
+    });
+
+    // Auto-animate markers on page load
+    setTimeout(() => {
+        markers.forEach(marker => {
+            marker.classList.add('active');
+            setTimeout(() => {
+                marker.classList.remove('active');
+            }, 1500);
+        });
+    }, 500);
+});
+
+
 // Expertise Table Animation
 document.addEventListener("DOMContentLoaded", function() {
     const expertiseTable = document.querySelector('.expertise_tb');
@@ -43,6 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     observer.observe(expertiseTable);
 });
+
 
 // Header Slide in animation
 document.addEventListener("DOMContentLoaded", function() {
