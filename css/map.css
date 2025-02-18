@@ -1,0 +1,132 @@
+/* World Map Styles */
+.world-map-section {
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+
+.world-map-container {
+    position: relative;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#world-map {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.marker {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #0976BB;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 0 3px rgba(9, 118, 187, 0.3);
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.marker:hover {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 6px rgba(9, 118, 187, 0.3);
+}
+
+/* Marker Positions */
+#austria-marker {
+    top: 45%;
+    left: 50%;
+}
+
+#italy-marker {
+    top: 49%;
+    left: 50%;
+}
+
+#new-zealand-marker {
+    top: 90%;
+    left: 93%;
+}
+
+#germany-marker {
+    top: 43%;
+    left: 49%;
+}
+
+#indonesia-marker {
+    top: 70%;
+    left: 76%;
+}
+
+#sweden-marker {
+    top: 35%;
+    left: 50%;
+}
+
+#uk-marker {
+    top: 40%;
+    left: 45%;
+}
+
+#us-marker {
+    top: 48%;
+    left: 18%;
+}
+
+#qatar-marker {
+    top: 57%;
+    left: 61%;
+}
+
+#spain-marker {
+    top: 50%;
+    left: 45%;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(9, 118, 187, 0.4);
+    }
+    70% {
+        transform: scale(1.2);
+        box-shadow: 0 0 0 10px rgba(9, 118, 187, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(9, 118, 187, 0);
+    }
+}
+
+.marker.active {
+    animation: pulse 1.5s infinite;
+}
+
+.country {
+    stroke: #fff;
+    stroke-width: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.country:hover {
+    fill: #0976BB;
+    transform: scale(1.05);
+}
+
+.country-popup {
+    position: absolute;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
