@@ -126,7 +126,6 @@ nav ul li {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
 .card_content {
     text-align: left;
     margin-left: 10%;
@@ -142,4 +141,14 @@ nav ul li {
     color: #0976BB;
     text-align: center;
     font-size: 25px;
+}
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
 }

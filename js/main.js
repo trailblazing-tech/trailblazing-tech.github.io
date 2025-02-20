@@ -1,5 +1,30 @@
+// Section Fade-in Animation
+document.addEventListener("DOMContentLoaded", function() {
+    // Handle fade-in for intro and client demography sections
+    const sections = document.querySelectorAll('#intro, #services, #client_demography');
+
+    
+    sections.forEach(section => {
+        section.classList.add('fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, 1000); // 1 second delay
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        observer.observe(section);
+    });
+})
+
 // World Map Markers Animation
 document.addEventListener("DOMContentLoaded", function() {
+
     const markers = document.querySelectorAll('.marker');
     const popup = document.createElement('div');
     popup.className = 'country-popup';
