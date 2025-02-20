@@ -1,8 +1,7 @@
-// Section Fade-in Animation
+// World Map Markers Animation
 document.addEventListener("DOMContentLoaded", function() {
     // Handle fade-in for intro and client demography sections
-    const sections = document.querySelectorAll('#intro, #services, #client_demography');
-
+    const sections = document.querySelectorAll('#intro, #client_demography, #services');
     
     sections.forEach(section => {
         section.classList.add('fade-in');
@@ -20,10 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         
         observer.observe(section);
     });
-})
 
-// World Map Markers Animation
-document.addEventListener("DOMContentLoaded", function() {
 
     const markers = document.querySelectorAll('.marker');
     const popup = document.createElement('div');
@@ -83,54 +79,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }, 500);
 });
-
-
-// Expertise Table Animation
-document.addEventListener("DOMContentLoaded", function() {
-    const expertiseTable = document.querySelector('.expertise_tb');
-    
-    // Add initial hidden state
-    expertiseTable.classList.add('hidden-left');
-    
-    const animateExpertiseTable = () => {
-        let start = null;
-        const duration = 1000; // 1 second
-
-        const step = (timestamp) => {
-            if (!start) start = timestamp;
-            const progress = timestamp - start;
-            const percentage = Math.min(progress / duration, 1);
-            
-            expertiseTable.style.transform = `translateX(${-100 + (100 * percentage)}%)`;
-            expertiseTable.style.opacity = percentage;
-            
-            if (percentage < 1) {
-                requestAnimationFrame(step);
-            } else {
-                expertiseTable.classList.remove('hidden-left');
-                expertiseTable.classList.add('slide-in-left');
-            }
-        };
-
-        requestAnimationFrame(step);
-    };
-
-    // Trigger animation when table is in view
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateExpertiseTable();
-                observer.unobserve(expertiseTable);
-            }
-        });
-    }, { 
-        threshold: 0.2,
-        rootMargin: '0px 0px -100px 0px' // Trigger when 100px from bottom of viewport
-    });
-
-    observer.observe(expertiseTable);
-});
-
 
 // Header Slide in animation
 document.addEventListener("DOMContentLoaded", function() {
