@@ -8,13 +8,14 @@ body {
 
 .client-demography-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));  /* Adjusted for responsiveness */
+    grid-template-columns: auto auto auto;
     gap: 20px;
     padding: 20px;
-    width: 90%;
-    margin: 0 auto;
-
+    width: 100%; /* Changed width to 100% for full-width centering */
+    margin-left: 5%;
+    margin-right: auto;
 }
+
 
 .grid-item {
     background-color: #f9f9f9;
@@ -32,6 +33,7 @@ body {
 .demographic-info {
     padding: 10px;
     display: block; /* Ensure the static demographic info is displayed */
+    grid-column: 1 / span 2;
 }
 
 
@@ -47,13 +49,6 @@ header {
     padding: 20px 0;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-    padding: 0.5%;
-    margin-top: 40px;
-    margin-left: 5%;
-    margin-right: 2%;
 }
 
 /* Nav */
@@ -88,21 +83,40 @@ nav ul li {
     background-color: #0977bbaa;
 }
 
-.social {
-    margin-left: 20%;
-    margin-right: 20%;
+footer {
+    padding: 10px 0;
+    background-color: #0976BB;
+    color: white;
+    margin-top: 40px;
 }
 
-.contact_us {
-    margin-left: 5%;
-    margin-right: 5%;
+.contact_us_grid {
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: flex-end; /* Align to the right */
+    align-items: center; /* Center vertically */
+    width: 100%; /* Adjusted width for full alignment */
+    margin-right: 5%; /* Adjusted margin for spacing */
 }
 
-/* Images */
+
 #image_icon {
     width: 30px;
     height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
 }
+
+.contact_us_grid {
+    display: flex; /* Changed to flex for better alignment */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+
+
+
 
 /* Vision & Mission Content */
 .vision_mission_tb {
