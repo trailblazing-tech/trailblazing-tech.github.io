@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const sections = document.querySelectorAll('#intro, #client_demography, #services');
     
     sections.forEach(section => {
-        section.classList.add('fade-in');
-        
+        if (section.id !== 'client_demography') {
+            section.classList.add('fade-in');
+        }
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -19,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function() {
         
         observer.observe(section);
     });
-
 
     const markers = document.querySelectorAll('.marker');
     const popup = document.createElement('div');
@@ -39,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
         'qatar-marker': 'Qatar',
         'spain-marker': 'Spain'
     };
-
 
     markers.forEach(marker => {
         // Add hover effect
@@ -69,7 +69,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Auto-animate markers on page load
+    // Call the animateNumbers function when client_demography is visible
+    const clientDemographySection = document.querySelector('#client_demography');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateNumbers(); // Call the new function
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    observer.observe(clientDemographySection);
+
     setTimeout(() => {
         markers.forEach(marker => {
             marker.classList.add('active');
@@ -80,7 +92,45 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 500);
 });
 
-// Header Slide in animation
+function animateNumbers() {
+    const completedProjects = document.querySelector('.demographic-info h2').childNodes[0]; // Updated to target <h2>
+    const uniqueClients = document.querySelector('.demographic-info h2').childNodes[3]; // Unique Clients
+    const countries = document.querySelector('.demographic-info h2').childNodes[6]; // Countries
+
+    let projectsCount = 0;
+    let clientsCount = 0;
+    let countriesCount = 0;
+
+    const targetProjects = 17;
+    const targetClients = 14;
+    const targetCountries = 10;
+
+    const duration = 2000; // Duration in milliseconds
+    const intervalTime = 50; // Interval time in milliseconds
+    const incrementProjects = Math.ceil(targetProjects / (duration / intervalTime));
+    const incrementClients = Math.ceil(targetClients / (duration / intervalTime));
+    const incrementCountries = Math.ceil(targetCountries / (duration / intervalTime));
+
+    const interval = setInterval(() => {
+        if (projectsCount < targetProjects) {
+            projectsCount += incrementProjects;
+            completedProjects.textContent = Math.min(projectsCount, targetProjects) + " Completed projects";
+        }
+        if (clientsCount < targetClients) {
+            clientsCount += incrementClients;
+            uniqueClients.textContent =  Math.min(clientsCount, targetClients) + " Unique clients";
+        }
+        if (countriesCount < targetCountries) {
+            countriesCount += incrementCountries;
+            countries.textContent = Math.min(countriesCount, targetCountries) + " Different countries";
+        }
+        if (projectsCount >= targetProjects && clientsCount >= targetClients && countriesCount >= targetCountries) {
+            clearInterval(interval);
+        }
+    }, intervalTime);
+}
+
+// Remove the call to animateNumbers from here
 document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
     header.style.position = 'relative';
