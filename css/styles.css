@@ -12,8 +12,10 @@ body {
     gap: 20px;
     padding: 20px;
     width: 100%; /* Changed width to 100% for full-width centering */
-    margin-left: 5%;
-    margin-right: auto;
+    /* margin-left: 2%;
+    margin-right: auto; */
+    align-content: center;
+    justify-content: center;
 }
 
 

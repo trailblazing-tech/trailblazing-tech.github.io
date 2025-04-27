@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
         'uk-marker': 'United Kingdom',
         'us-marker': 'United States',
         'qatar-marker': 'Qatar',
-        'spain-marker': 'Spain'
+        'spain-marker': 'Spain',
+        'portugal-marker': 'Portugal',
+        'philipine-marker': 'Philipine',
     };
 
     markers.forEach(marker => {
@@ -101,9 +103,9 @@ function animateNumbers() {
     let clientsCount = 0;
     let countriesCount = 0;
 
-    const targetProjects = 17;
-    const targetClients = 14;
-    const targetCountries = 10;
+    const targetProjects = 19;
+    const targetClients = 16;
+    const targetCountries = 12;
 
     const duration = 2000; // Duration in milliseconds
     const intervalTime = 50; // Interval time in milliseconds
