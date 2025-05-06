@@ -55,6 +55,14 @@ body {
   background-color: #ffffff;
 }
 
+.intro-logo {
+  display: block;
+  margin: 0 auto;
+  width: 400px; /* ubah sesuai kebutuhan */
+  margin-top: -80px;
+  margin-bottom: -80px;
+}
+
 .h1_title {
   text-align: center;
   font-size: 2.2rem;
