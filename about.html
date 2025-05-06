@@ -1,91 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/profile.png">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>About Us</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about TrailTech's mission, vision, and global values. We deliver cutting-edge embedded systems and IoT solutions worldwide." />
+  <title>About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="images/profile.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #ffffff;
+      color: #1e293b;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      width: 80px;
+    }
+
+    .nav-menu ul {
+      display: flex;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .nav-menu a {
+      text-decoration: none;
+      color: #0ea5e9;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      background-color: #0ea5e9;
+      color: white;
+    }
+
+    .intro-section {
+      padding: 60px 20px 20px;
+      text-align: center;
+      background: linear-gradient(to bottom, #f0f9ff, #ffffff);
+    }
+
+    .page-subtitle {
+      font-size: 1.5rem;
+      color: #0ea5e9;
+      font-weight: 600;
+    }
+
+    .about-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .h1_title {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 40px;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .card_content {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .about-card {
+      max-width: 800px;
+      background-color: #e0f2fe;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .about-card h2 {
+      color: #0284c7;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .about-card h2 i {
+      margin-right: 10px;
+    }
+
+    .about-card p {
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .about-card ul {
+      padding-left: 20px;
+      color: #1e293b;
+    }
+
+    .about-card ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      background-color: #0ea5e9;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    .contact_us_grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .contact-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-card {
+        padding: 20px;
+      }
+
+      .page-subtitle {
+        font-size: 1.2rem;
+      }
+
+      .about-section {
+        padding: 30px 10px;
+      }
+
+      .contact_us_grid {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header id="header" style="opacity: 1; top: 0px;">
-		<div class="row" style="display: flex; align-items: center;">
-			<div class="col" style="flex: 1;">
-				<a id="logo" class="logo" href="https://trailblazing-tech.github.io/">
-                    <img src="images/profile.png" alt="trailblazing-tech logo" style="width:100px;height:auto;">
-                </a>
-			</div>
-            <div class="col" style="flex: 2;"></div>
-            <div class="col" style="flex: 2;">
-                <nav>
-					<ul id="nav">
-						<a class="menu-bar" href="index.html"><li>Home</li></a>
-						<a class="menu-bar" href="portfolio.html"><li>Portfolio</li></a>
-                        <a class="menu-bar" href="about.html"><li>About</li></a>
-					</ul>
-				</nav>
-            </div>
-		</div>
-	</header>
-    
-    <!-- Content -->
-    <section id="history">
-        <h1 id="title">We are serving clients since 2024 across the globe.</h1>
-    </section>
+  <header class="header">
+    <div class="logo-section">
+      <a href="https://trailblazing-tech.github.io/">
+        <img src="images/profile.png" alt="TrailTech Logo" class="logo" />
+      </a>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="vision-mission">
-        <h1 class="h1_title">Our Mission & Values</h1>
-        <div class="card_content">
-            <table class="vision_mission_tb">
-                <tr>
-                    <th>Vision</th>
-                </tr>
-                <tr style="text-align: justify;">
-                    <!-- Mission -->
-                    <td>
-                        We are committed to delivering high-quality products with the state-of-the-art technology and 
-                        the most optimize systems that can give edge to the client's product.
-                    </td>
-                </tr>
-                <tr>
-                    <th>Mission</th>
-                </tr>
-                <tr>
-                    <!-- Values -->
-                    <td>
-                        To achieve our vision, we are committed to: 
-                        <br>
-                        <br>
-                        1.  Continuously comprehend our technical skills and knowledge in Embedded systems, Internet of Things, and edge computing.
-                        <br>
-                        <br>
-                        2.  Research on the latest technologies and trends in the fields of home appliances, electric vehicles, agriculture, healthcare,
-                            and industrial sectors.
-                        <br>
-                        <br>
-                        3.  Collaborate with industry professionals and academics through open-source projects.
-                        <br>
-                        <br>                   
-                </td>
-                </tr>
-            </table>
-        </div>
-        
-    </section>
-    <!-- / Content -->
+  <section class="intro-section">
+    <h1 class="page-subtitle">We are serving clients since 2024 across the globe.</h1>
+  </section>
 
-    <footer>
-        <div class="contact_us_grid">
-            <div><p style="font-size: 120%; font-weight: bold; text-align: center;">Stay in touch &ensp;</p></div>
-            <div style="margin-right: 1%;"><a href="mailto:trailblazingtechsol@gmail.com"><img id="image_icon" src="images/icons/icon_email.png"></a></div>
-            <div style="margin-right: 1%;"><a href="https://www.instagram.com/_trail.tech"><img id="image_icon" src="images/icons/icon_instagram.png"></a></div>
-            <div style="margin-right: 1%;"><a href="https://github.com/trailblazing-tech"><img id="image_icon" src="images/icons/icon_github.png"></a></div>
-        </div>
-        <div>
-            <!-- <p style="color: black;">Copyright 2025 TrailTech</p> -->
-        </div>
-    </footer>
-    
-    <script src="js/main.js"></script>
+  <section class="about-section">
+    <h1 class="h1_title">Our Mission & Values</h1>
+    <div class="card_content">
+      <div class="about-card">
+        <h2><i class="fas fa-bullseye"></i> Vision</h2>
+        <p>
+          We are committed to delivering high-quality products with the state-of-the-art technology and 
+          the most optimize systems that can give edge to the client's product.
+        </p>
+        <h2><i class="fas fa-rocket"></i> Mission</h2>
+        <p>
+          To achieve our vision, we are committed to:
+        </p>
+        <ul>
+          <li>Continuously comprehend our technical skills and knowledge in Embedded systems, Internet of Things, and edge computing.</li>
+          <li>Research on the latest technologies and trends in the fields of home appliances, electric vehicles, agriculture, healthcare, and industrial sectors.</li>
+          <li>Collaborate with industry professionals and academics through open-source projects.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="contact_us_grid">
+      <p class="contact-title">Stay in touch</p>
+      <a href="mailto:trailblazingtechsol@gmail.com"><img src="images/icons/icon_email.png" alt="Email" class="icon" /></a>
+      <a href="https://www.instagram.com/_trail.tech"><img src="images/icons/icon_instagram.png" alt="Instagram" class="icon" /></a>
+      <a href="https://github.com/trailblazing-tech"><img src="images/icons/icon_github.png" alt="GitHub" class="icon" /></a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
