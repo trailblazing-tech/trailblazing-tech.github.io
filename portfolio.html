@@ -1,13 +1,15 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="images/profile.png">
     <link rel="stylesheet" href="css/styles.css">
     <title>Portfolio</title>
 </head>
-<body>
+<body id="client-demography-body">
     <header id="header" style="opacity: 1; top: 0px;">
 		<div class="row" style="display: flex; align-items: center;">
 			<div class="col" style="flex: 1;">
@@ -26,19 +28,22 @@
 				</nav>
             </div>
 		</div>
-	</header>
+	</header> -->
     
     <!-- Content -->
-    <div class="client-demography-grid">
+    <!-- <div class="client-demography-grid">
         <div class="grid-item">
+            <i class="fas fa-check-circle"></i>
             <h2>Completed Projects</h2>
             <p>17</p>
         </div>
         <div class="grid-item">
+            <i class="fas fa-users"></i>
             <h2>Unique Clients</h2>
             <p>14</p>
         </div>
         <div class="grid-item">
+            <i class="fas fa-globe"></i>
             <h2>Countries</h2>
             <p>10</p>
         </div>
@@ -46,20 +51,196 @@
 
     <div>
         <h1 class="h1_title">Portfolio</h1>
-    </div>
+        <div id="featured-projects">
+            <div class="container">
+              <div class="header">
+                <h2>Featured Projects</h2>
+                <a href="#" class="view-all">View all</a>
+              </div>
+        
+              <div class="card-container">
+                <div class="card">
+                  <img src="https://via.placeholder.com/400x150?text=Gemma+3" alt="Project 1" />
+                  <div class="content">
+                    <div class="title">Deploying Large Language Models with llama.cpp and k3s</div>
+                    <div class="author">Nurgaliyev Shakhizat &#10004;</div>
+                  </div>
+                  <div class="footer">
+                    <div>&#128077; 4</div>
+                    <div>&#128065; 111</div>
+                  </div>
+                </div>
+        
+                <div class="card">
+                  <img src="https://via.placeholder.com/400x150?text=Raspberry+Pi" alt="Project 2" />
+                  <div class="content">
+                    <div class="title">Using a Raspberry Pi as a Bootable Drive with Pantacor</div>
+                    <div class="author">jeremybobbin &#10004;</div>
+                  </div>
+                  <div class="footer">
+                    <div>&#128077; 3</div>
+                    <div>&#128065; 192</div>
+                  </div>
+                </div>
+        
+                <div class="card">
+                  <img src="https://via.placeholder.com/400x150?text=Retro-Logger" alt="Project 3" />
+                  <div class="content">
+                    <div class="title">Retro-Logger</div>
+                    <div class="author">Mukesh Sankhla &#10004;</div>
+                  </div>
+                  <div class="footer">
+                    <div>&#128077; 9</div>
+                    <div>&#128065; 1.9K</div>
+                  </div>
+                </div>
+        
+                <div class="card">
+                  <img src="https://via.placeholder.com/400x150?text=DeepSeek+ZUBoard" alt="Project 4" />
+                  <div class="content">
+                    <div class="title">DeepSeek On the ZUBoard</div>
+                    <div class="author">Adam Taylor &#9989;</div>
+                  </div>
+                  <div class="footer">
+                    <div>&#128077; 8</div>
+                    <div>&#128065; 989</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div> -->
     <!-- / Content -->
 
-    <footer>
+    <!-- <footer>
         <div class="contact_us_grid">
             <div><p style="font-size: 120%; font-weight: bold; text-align: center;">Stay in touch &ensp;</p></div>
             <div style="margin-right: 1%;"><a href="mailto:trailblazingtechsol@gmail.com"><img id="image_icon" src="images/icons/icon_email.png"></a></div>
             <div style="margin-right: 1%;"><a href="https://www.instagram.com/_trail.tech"><img id="image_icon" src="images/icons/icon_instagram.png"></a></div>
             <div style="margin-right: 1%;"><a href="https://github.com/trailblazing-tech"><img id="image_icon" src="images/icons/icon_github.png"></a></div>
         </div>
-        <div>
+        <div> -->
             <!-- <p style="color: black;">Copyright 2025 TrailTech</p> -->
-        </div>
+        <!-- </div>
     </footer>
     <script src="js/main.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/styles_portfolio.css" />
+  <link rel="icon" href="images/profile.png" />
+</head>
+<body id="client-demography-body">
+  <header class="header">
+    <div class="logo-section">
+      <a href="https://trailblazing-tech.github.io/">
+        <img src="images/profile.png" alt="TrailTech Logo" class="logo" />
+      </a>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="section-demography">
+    <div class="client-demography-grid">
+      <div class="grid-item">
+        <i class="fas fa-check-circle"></i>
+        <h2>Completed Projects</h2>
+        <p>17</p>
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-users"></i>
+        <h2>Unique Clients</h2>
+        <p>14</p>
+      </div>
+      <div class="grid-item">
+        <i class="fas fa-globe"></i>
+        <h2>Countries</h2>
+        <p>10</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio-section">
+    <h1 class="h1_title">Portfolio</h1>
+    <div id="featured-projects">
+      <div class="container">
+        <div class="card-container">
+          <div class="card">
+            <img src="https://via.placeholder.com/400x150?text=Gemma+3" alt="Project 1" />
+            <div class="content">
+              <div class="title">Deploying Large Language Models with llama.cpp and k3s</div>
+              <div class="author">Nurgaliyev Shakhizat &#10004;</div>
+            </div>
+            <div class="footer">
+              <div>&#128077; 4</div>
+              <div>&#128065; 111</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://via.placeholder.com/400x150?text=Raspberry+Pi" alt="Project 2" />
+            <div class="content">
+              <div class="title">Using a Raspberry Pi as a Bootable Drive with Pantacor</div>
+              <div class="author">jeremybobbin &#10004;</div>
+            </div>
+            <div class="footer">
+              <div>&#128077; 3</div>
+              <div>&#128065; 192</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://via.placeholder.com/400x150?text=Retro-Logger" alt="Project 3" />
+            <div class="content">
+              <div class="title">Retro-Logger</div>
+              <div class="author">Mukesh Sankhla &#10004;</div>
+            </div>
+            <div class="footer">
+              <div>&#128077; 9</div>
+              <div>&#128065; 1.9K</div>
+            </div>
+          </div>
+
+          <div class="card">
+            <img src="https://via.placeholder.com/400x150?text=DeepSeek+ZUBoard" alt="Project 4" />
+            <div class="content">
+              <div class="title">DeepSeek On the ZUBoard</div>
+              <div class="author">Adam Taylor &#9989;</div>
+            </div>
+            <div class="footer">
+              <div>&#128077; 8</div>
+              <div>&#128065; 989</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="contact_us_grid">
+      <p class="contact-title">Stay in touch</p>
+      <a href="mailto:trailblazingtechsol@gmail.com"><img src="images/icons/icon_email.png" alt="Email" class="icon" /></a>
+      <a href="https://www.instagram.com/_trail.tech"><img src="images/icons/icon_instagram.png" alt="Instagram" class="icon" /></a>
+      <a href="https://github.com/trailblazing-tech"><img src="images/icons/icon_github.png" alt="GitHub" class="icon" /></a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
