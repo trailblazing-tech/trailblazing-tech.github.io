@@ -175,7 +175,7 @@ body {
 .world-map-container {
   position: relative;
   width: 100%;
-  /* max-width: 1700px; */
+  /* max-width: 100px; */
   flex: 1;
 }
 
@@ -230,13 +230,13 @@ body {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     padding: 1rem;
   }
 
   .nav-menu ul {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     width: 100%;
     margin-top: 1rem;
@@ -271,7 +271,7 @@ body {
   .demographic-info {
     text-align: center;
     padding-top: 20px;
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     line-height: 2.2;
   }
 }
