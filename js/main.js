@@ -1,6 +1,5 @@
 // World Map Markers Animation
 document.addEventListener("DOMContentLoaded", function() {
-    // Handle fade-in for intro and client demography sections
     const sections = document.querySelectorAll('#intro, #client_demography, #services');
     
     sections.forEach(section => {
@@ -13,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (entry.isIntersecting) {
                     setTimeout(() => {
                         entry.target.classList.add('visible');
-                    }, 1000); // 1 second delay
+                    }, 1000);
                     observer.unobserve(entry.target);
                 }
             });
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
     popup.className = 'country-popup';
     document.body.appendChild(popup);
 
-    // Country data
     const countryData = {
         'austria-marker': 'Austria',
         'italy-marker': 'Italy',
@@ -44,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
     };
 
     markers.forEach(marker => {
-        // Add hover effect
         marker.addEventListener('mouseenter', (e) => {
             const rect = marker.getBoundingClientRect();
             popup.textContent = countryData[marker.id];
@@ -59,7 +56,6 @@ document.addEventListener("DOMContentLoaded", function() {
             marker.classList.remove('active');
         });
 
-        // Add click animation
         marker.addEventListener('click', () => {
             marker.classList.toggle('active');
             if (marker.classList.contains('active')) {
@@ -71,12 +67,11 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    // Call the animateNumbers function when client_demography is visible
     const clientDemographySection = document.querySelector('#client_demography');
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateNumbers(); // Call the new function
+                animateNumbers();
                 observer.unobserve(entry.target);
             }
         });
@@ -95,9 +90,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function animateNumbers() {
-    const completedProjects = document.querySelector('.demographic-info h2').childNodes[0]; // Updated to target <h2>
-    const uniqueClients = document.querySelector('.demographic-info h2').childNodes[3]; // Unique Clients
-    const countries = document.querySelector('.demographic-info h2').childNodes[6]; // Countries
+    const completedProjects = document.querySelector('.demographic-info h3').childNodes[0];
+    const uniqueClients = document.querySelector('.demographic-info h3').childNodes[2];
+    const countries = document.querySelector('.demographic-info h3').childNodes[4];
 
     let projectsCount = 0;
     let clientsCount = 0;
@@ -107,8 +102,8 @@ function animateNumbers() {
     const targetClients = 16;
     const targetCountries = 12;
 
-    const duration = 2000; // Duration in milliseconds
-    const intervalTime = 50; // Interval time in milliseconds
+    const duration = 2000;
+    const intervalTime = 50;
     const incrementProjects = Math.ceil(targetProjects / (duration / intervalTime));
     const incrementClients = Math.ceil(targetClients / (duration / intervalTime));
     const incrementCountries = Math.ceil(targetCountries / (duration / intervalTime));
@@ -116,15 +111,15 @@ function animateNumbers() {
     const interval = setInterval(() => {
         if (projectsCount < targetProjects) {
             projectsCount += incrementProjects;
-            completedProjects.textContent = Math.min(projectsCount, targetProjects) + " Completed projects";
+            completedProjects.textContent = Math.min(projectsCount, targetProjects) + " Completed Projects";
         }
         if (clientsCount < targetClients) {
             clientsCount += incrementClients;
-            uniqueClients.textContent =  Math.min(clientsCount, targetClients) + " Unique clients";
+            uniqueClients.textContent =  Math.min(clientsCount, targetClients) + " Unique Clients";
         }
         if (countriesCount < targetCountries) {
             countriesCount += incrementCountries;
-            countries.textContent = Math.min(countriesCount, targetCountries) + " Different countries";
+            countries.textContent = Math.min(countriesCount, targetCountries) + " Different Countries";
         }
         if (projectsCount >= targetProjects && clientsCount >= targetClients && countriesCount >= targetCountries) {
             clearInterval(interval);
@@ -132,7 +127,6 @@ function animateNumbers() {
     }, intervalTime);
 }
 
-// Remove the call to animateNumbers from here
 document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById("header");
     header.style.position = 'relative';
