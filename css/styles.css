@@ -157,6 +157,12 @@ body {
   height: 28px;
 }
 
+.copyright {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #e0f7ff;
+}
+
 /* ========== CLIENT DEMOGRAPHY ========== */
 #client_demography {
   padding: 60px 20px;

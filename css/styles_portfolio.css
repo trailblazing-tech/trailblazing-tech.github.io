@@ -212,6 +212,12 @@ body {
     height: 28px;
 }
 
+.copyright {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #e0f7ff;
+}
+
 @keyframes fadeIn {
     0% {
       opacity: 0;
