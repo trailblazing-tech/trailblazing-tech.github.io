@@ -98,8 +98,8 @@ function animateNumbers() {
     let clientsCount = 0;
     let countriesCount = 0;
 
-    const targetProjects = 19;
-    const targetClients = 16;
+    const targetProjects = 20;
+    const targetClients = 17;
     const targetCountries = 12;
 
     const duration = 2000;
